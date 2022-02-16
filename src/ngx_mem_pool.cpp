@@ -18,7 +18,7 @@ ngx_mem_pool::ngx_mem_pool() {
     m_pool->d.failed = 0;
 
     unused_size = default_size - sizeof(ngx_pool_s);
-    m_pool->max = (size < NGX_MAX_ALLOC_FROM_POOL) ? size : NGX_MAX_ALLOC_FROM_POOL;
+    m_pool->max = unused_size < NGX_MAX_ALLOC_FROM_POOL ? unused_size : NGX_MAX_ALLOC_FROM_POOL;
     m_pool->current = m_pool;
     m_pool->large = nullptr;
     m_pool->cleanup = nullptr;
