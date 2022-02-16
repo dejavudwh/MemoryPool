@@ -58,6 +58,8 @@ public:
 
 private:
     ngx_pool_s* m_pool;
+    size_t default_size;
+    size_t unused_size;
     void* ngx_palloc_small(size_t size, unsigned int align);
     void* ngx_palloc_large(size_t size);
     void* ngx_palloc_block(size_t size);
