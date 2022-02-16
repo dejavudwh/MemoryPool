@@ -48,6 +48,7 @@ const int NGX_MIN_POOL_SIZE = ngx_align((sizeof(ngx_pool_s) + 2 * sizeof(ngx_poo
 class ngx_mem_pool {
 public:
     ngx_mem_pool();
+    ~ngx_mem_pool();
     void* ngx_palloc(size_t size);
     void* ngx_pnalloc(size_t size);
     void* ngx_pcalloc(size_t size);

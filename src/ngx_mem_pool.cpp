@@ -174,7 +174,7 @@ void ngx_mem_pool::ngx_reset_pool() {
     m_pool->large = nullptr;  //在reset小块内存的时候大块内存的内存头就已经释放了
 }
 
-void ngx_mem_pool::ngx_destroy_pool() {
+ngx_mem_pool::~ngx_mem_pool() {
     ngx_pool_s *p, *n;
     ngx_pool_large_s* l;
     ngx_pool_cleanup_s* c;
